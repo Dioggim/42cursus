@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 18:24:01 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/09/20 18:24:01 by dgimenez         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:17:37 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <bsd/string.h>  // Para a função original strlcpy
-#include <stddef.h>
 #include <string.h>      // Para usar strcmp na comparação
-
+#include "libft.h"
 // Função personalizada ft_strlcpy
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

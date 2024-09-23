@@ -2,7 +2,8 @@
 NAME = libft.a
 
 # Arquivos de origem (todos os arquivos ft_*.c que você criou)
-SRC = ft_strlen.c ft_atoi.c # Adicione todos os arquivos .c aqui
+SRC = ft_bzero.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strlcat.c ft_strlcpy.c ft_strlen.c
+# Adicione todos os arquivos .c aqui
 
 # Arquivos objetos gerados a partir dos arquivos .c
 OBJ = $(SRC:.c=.o)
