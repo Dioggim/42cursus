@@ -6,7 +6,7 @@
 /*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 13:51:17 by diogo             #+#    #+#             */
-/*   Updated: 2024/09/25 14:08:41 by diogo            ###   ########.fr       */
+/*   Updated: 2024/09/25 14:16:22 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
 	p2 = (unsigned char *)ptr2;
 	while (num > 0)
 	{
-		if ((*p1 - *p2) != 0)
+		if ((*p1 != *p2) != 0)
 			return (*p1 - *p2);
 		p1++;
 		p2++;
