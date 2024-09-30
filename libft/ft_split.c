@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgimenez <dgimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 21:10:49 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/09/28 21:35:23 by dgimenez         ###   ########.fr       */
+/*   Updated: 2024/09/30 22:29:06 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,62 +21,72 @@ static int	ft_wordcount(char const *s, char c)
 	count = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c) /* Ignora delimitadores consecutivos */
+		while (s[i] == c)
 			i++;
 		if (s[i] != '\0')
-			count++; /* Conta uma palavra se não for o delimitador */
-		while (s[i] != '\0' && s[i] != c) /* Avança até o próximo delimitador ou fim da string */
-			i++;
+		{
+			count++;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+		}
 	}
-	return (count); /* Retorna o número de palavras */
+	return (count);
 }
 
 static char	*ft_worddup(char const *s, int start, int end)
 {
-	char		*word;
+	char	*word;
 
 	word = (char *)ft_calloc((end - start + 1), sizeof(char));
 	if (!word)
 		return (NULL);
-	ft_memcpy(word, &s[start], end - start); /* Copia a palavra da string original */
-	return (word); /* Retorna a nova palavra */
+	ft_memcpy(word, &s[start], end - start);
+	return (word);
 }
 
-char		**ft_split(char const *s, char c)
+static int	ft_fill_words(char **result, char const *s, char c)
 {
-	char		**result;
 	int		i;
 	int		j;
 	int		start;
+
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] == c)
+			i++;
+		start = i;
+		while (s[i] != '\0' && s[i] != c)
+			i++;
+		if (start < i)
+		{
+			result[j] = ft_worddup(s, start, i);
+			if (!result[j])
+				return (0);
+			j++;
+		}
+	}
+	result[j] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
 
 	if (!s)
 		return (NULL);
 	result = (char **)ft_calloc((ft_wordcount(s, c) + 1), sizeof(char *));
 	if (!result)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	if (!ft_fill_words(result, s, c))
 	{
-		while (s[i] == c) /* Ignora delimitadores */
-			i++;
-		start = i;
-		while (s[i] != '\0' && s[i] != c) /* Encontra o fim da palavra */
-			i++;
-		if (start < i)
-		{
-			result[j] = ft_worddup(s, start, i);
-			if (!result[j])
-			{
-				while (j > 0) /* Limpa memória alocada em caso de falha */
-					free(result[--j]);
-				free(result);
-				return (NULL);
-			}
-			j++;
-		}
+		while (*result)
+			free(*result++);
+		free(result);
+		return (NULL);
 	}
-	result[j] = NULL; /* Termina o array de strings com NULL */
 	return (result);
 }
 /*
