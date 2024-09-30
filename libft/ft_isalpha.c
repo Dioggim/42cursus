@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgimenez <dgimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 17:30:45 by diogo             #+#    #+#             */
-/*   Updated: 2024/09/26 12:27:03 by dgimenez         ###   ########.fr       */
+/*   Created: 2024/09/17 09:57:21 by dgimenez          #+#    #+#             */
+/*   Updated: 2024/09/26 12:30:19 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_isalpha(int n)
 {
-	size_t	len;
-
-	len = 0;
-	while (*str != '\0')
+	if ((n >= 'a' && n <= 'z') || (n >= 'A' && n <= 'Z'))
 	{
-		str++;
-		len++;
+		return (1);
 	}
-	return (len);
+	return (0);
 }
+
+/*
+int	main(void)
+{
+	ft_isalpha('f');
+	printf("eh alpha?:%d\n", ft_isalpha('f'));
+	return(0);
+}
+*/

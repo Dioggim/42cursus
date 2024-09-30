@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dgimenez <dgimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 09:52:07 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/09/20 12:42:09 by dgimenez         ###   ########.fr       */
+/*   Updated: 2024/09/26 12:29:48 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *buffer, int newvalue, size_t rep)
 {

@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dgimenez <dgimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 18:24:01 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/09/23 19:17:37 by diogo            ###   ########.fr       */
+/*   Updated: 2024/09/26 12:26:54 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>      // Para usar strcmp na comparação
 #include "libft.h"
-// Função personalizada ft_strlcpy
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
@@ -68,11 +66,11 @@ int	main(void)
 	ret2 = ft_strlcpy(dest4, src1, 6);
 
 	printf("\nTeste com buffer menor (truncamento):\n");
-	
-	printf("Função original strlcpy - Destino: %s, 
+
+	printf("Função original strlcpy - Destino: %s,
 	Comprimento da origem: %zu\n", dest3, ret1);
 
-	printf("Função personalizada ft_strlcpy - Destino: 
+	printf("Função personalizada ft_strlcpy - Destino:
 	%s, Comprimento da origem: %zu\n", dest4, ret2);
 
 	// Comparando os resultados do truncamento
