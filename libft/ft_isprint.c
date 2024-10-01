@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgimenez <dgimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 15:26:48 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/09/26 12:30:21 by dgimenez         ###   ########.fr       */
+/*   Updated: 2024/10/01 01:36:42 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int n)
+int	ft_isprint(int c)
 {
-	if ((n >= 0 && n <= 31) || (n == 127))
-		return (0);
-	return (1);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
 /*
 int	main(void)
