@@ -6,65 +6,63 @@
 /*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 21:10:49 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/09/30 22:29:06 by diogo            ###   ########.fr       */
+/*   Updated: 2024/10/03 11:47:47 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_wordcount(char const *s, char c)
+static size_t	ft_wordcount(char const *s, char c)
 {
-	int		i;
-	int		count;
+	size_t	count;
+	size_t	i;
 
-	i = 0;
 	count = 0;
-	while (s[i] != '\0')
+	i = 0;
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != '\0')
+		if (s[i] && s[i] != c)
 		{
 			count++;
-			while (s[i] != '\0' && s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
 	return (count);
 }
 
-static char	*ft_worddup(char const *s, int start, int end)
+static void	ft_free_all(char **result, size_t j)
 {
-	char	*word;
-
-	word = (char *)ft_calloc((end - start + 1), sizeof(char));
-	if (!word)
-		return (NULL);
-	ft_memcpy(word, &s[start], end - start);
-	return (word);
+	while (j > 0)
+	{
+		free(result[j - 1]);
+		j--;
+	}
+	free(result);
 }
 
 static int	ft_fill_words(char **result, char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		start;
+	size_t	i;
+	size_t	j;
+	size_t	start;
 
 	i = 0;
 	j = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		start = i;
-		while (s[i] != '\0' && s[i] != c)
+		while (s[i] && s[i] != c)
 			i++;
 		if (start < i)
 		{
-			result[j] = ft_worddup(s, start, i);
-			if (!result[j])
-				return (0);
-			j++;
+			result[j] = ft_substr(s, start, i - start);
+			if (!result[j++])
+				return (ft_free_all(result, j - 1), 0);
 		}
 	}
 	result[j] = NULL;
@@ -77,16 +75,11 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	result = (char **)ft_calloc((ft_wordcount(s, c) + 1), sizeof(char *));
+	result = (char **)ft_calloc(ft_wordcount(s, c) + 1, sizeof(char *));
 	if (!result)
 		return (NULL);
 	if (!ft_fill_words(result, s, c))
-	{
-		while (*result)
-			free(*result++);
-		free(result);
 		return (NULL);
-	}
 	return (result);
 }
 /*

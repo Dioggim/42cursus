@@ -3,39 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgimenez <dgimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:48:14 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/09/28 17:58:46 by dgimenez         ###   ########.fr       */
+/*   Updated: 2024/10/03 11:28:56 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+#include "libft.h"
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*substr;
+	size_t	s_len;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		substr = (char *)malloc(1);
-		substr[0] = '\0';
-		return (substr);
-	}
-	if (len > (ft_strlen(s) - start))
-		len = ft_strlen(s) - start;
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		len = 0;
+	else if (len > s_len - start)
+		len = s_len - start;
 	substr = (char *)malloc(len + 1);
 	if (!substr)
 		return (NULL);
-	i = -1;
-	while (++i < len && s[start + i] != '\0')
+	i = 0;
+	while (i < len)
+	{
 		substr[i] = s[start + i];
+		i++;
+	}
 	substr[i] = '\0';
 	return (substr);
 }
+
 /*
 int	main(void)
 {
