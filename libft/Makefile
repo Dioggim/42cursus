@@ -22,15 +22,15 @@ OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 # Regras padrão
-all: $(NAME)
+all: $(NAME) $(BONUS_OBJS)
 
 # Criação da biblioteca
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 # Regras para os bônus
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
 
 # Limpeza dos arquivos objetos
 clean:
