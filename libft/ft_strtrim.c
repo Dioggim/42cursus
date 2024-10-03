@@ -6,7 +6,7 @@
 /*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:03:31 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/10/01 01:59:48 by diogo            ###   ########.fr       */
+/*   Updated: 2024/10/03 13:35:16 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*trimmed;
 
-	start = 0;
 	if (!s1 || !set)
 		return (NULL);
+	start = 0;
 	while (s1[start] && is_in_set(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
 	while (end > start && is_in_set(s1[end - 1], set))
 		end--;
-	trimmed = (char *)malloc(sizeof(char) * (end - start + 1));
+	trimmed = (char *)ft_calloc(end - start + 1, sizeof(char));
 	if (!trimmed)
 		return (NULL);
-	strncpy(trimmed, &s1[start], end - start);
-	trimmed[end - start] = '\0';
+	ft_memcpy(trimmed, &s1[start], end - start);
 	return (trimmed);
 }
+
 /*
 int	main(void)
 {

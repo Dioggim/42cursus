@@ -6,15 +6,13 @@
 /*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:11:54 by diogo             #+#    #+#             */
-/*   Updated: 2024/10/01 03:48:32 by diogo            ###   ########.fr       */
+/*   Updated: 2024/10/03 13:31:02 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <unistd.h>
-# include <stdio.h>
-# include <string.h>
 # include <stddef.h>
 # include <stdlib.h>
 

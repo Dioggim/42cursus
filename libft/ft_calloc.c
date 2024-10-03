@@ -6,7 +6,7 @@
 /*   By: diogo <diogo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 11:41:53 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/09/30 23:52:22 by diogo            ###   ########.fr       */
+/*   Updated: 2024/10/03 13:32:20 by diogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(total_size);
 	if (!ptr)
 		return (NULL);
-	memset(ptr, 0, total_size);
+	ft_memset(ptr, 0, total_size);
 	return (ptr);
 }
 
