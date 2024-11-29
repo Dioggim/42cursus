@@ -6,7 +6,7 @@
 /*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:50:50 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/11/26 12:39:54 by dgimenez         ###   ########.fr       */
+/*   Updated: 2024/11/30 00:42:09 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	handle_format(const char **format, va_list args)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (**format == 'c')
@@ -40,7 +40,7 @@ int	handle_format(const char **format, va_list args)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
+	va_list	args;
 	int		count;
 
 	count = 0;
@@ -62,4 +62,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-

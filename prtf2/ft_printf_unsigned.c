@@ -6,16 +6,16 @@
 /*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:24:53 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/11/26 12:24:56 by dgimenez         ###   ########.fr       */
+/*   Updated: 2024/11/30 00:39:04 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int handle_unsigned(va_list args)
+int	handle_unsigned(va_list args)
 {
-	unsigned int num;
-	int count;
+	unsigned int	num;
+	int				count;
 
 	num = va_arg(args, unsigned int);
 	ft_putunsigned(num);
@@ -23,10 +23,10 @@ int handle_unsigned(va_list args)
 	return (count);
 }
 
-int handle_hex(va_list args, char format)
+int	handle_hex(va_list args, char format)
 {
-	unsigned int num;
-	int count;
+	unsigned int	num;
+	int				count;
 
 	num = va_arg(args, unsigned int);
 	ft_puthex(num, format);

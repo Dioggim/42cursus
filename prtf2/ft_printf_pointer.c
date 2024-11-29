@@ -6,16 +6,16 @@
 /*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:23:31 by dgimenez          #+#    #+#             */
-/*   Updated: 2024/11/26 12:23:59 by dgimenez         ###   ########.fr       */
+/*   Updated: 2024/11/30 00:41:06 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int handle_pointer(va_list args)
+int	handle_pointer(va_list args)
 {
-	unsigned long ptr;
-	int count;
+	unsigned long	ptr;
+	int				count;
 
 	ptr = (unsigned long)va_arg(args, void *);
 	ft_putstr("0x");
@@ -24,10 +24,10 @@ int handle_pointer(va_list args)
 	return (count);
 }
 
-int handle_int(va_list args)
+int	handle_int(va_list args)
 {
-	int num;
-	int count;
+	int	num;
+	int	count;
 
 	num = va_arg(args, int);
 	ft_putnbr(num);

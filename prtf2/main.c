@@ -1,4 +1,18 @@
-int main(void)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/30 00:32:51 by dgimenez          #+#    #+#             */
+/*   Updated: 2024/11/30 00:42:24 by dgimenez         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int	main(void)
 {
 	ft_printf("Teste de caracteres: %c\n", 'A');
 	ft_printf("Teste de string: %s\n", "Hello, World!");
