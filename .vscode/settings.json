@@ -1,4 +1,7 @@
 {
     "42header.username": "dgimenez",
-    "42header.email": "dgimenez@student.42madrid.com"
+    "42header.email": "dgimenez@student.42madrid.com",
+    "files.associations": {
+        "random": "cpp"
+    }
 }
