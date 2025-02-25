@@ -6,15 +6,15 @@
 /*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:22:34 by dgimenez          #+#    #+#             */
-/*   Updated: 2025/02/24 18:45:43 by dgimenez         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:39:42 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sa(t_node **stack)
+void	sa(t_node **stack)
 {
-	int tmp;
+	int	tmp;
 
 	if (*stack && (*stack)->next)
 	{
@@ -25,10 +25,10 @@ void sa(t_node **stack)
 	write(1, "sa\n", 3);
 }
 
-void ra(t_node **stack)
+void	ra(t_node **stack)
 {
-	t_node *tmp;
-	t_node *first;
+	t_node	*tmp;
+	t_node	*first;
 
 	if (*stack && (*stack)->next)
 	{
@@ -43,10 +43,10 @@ void ra(t_node **stack)
 	write(1, "ra\n", 3);
 }
 
-void rra(t_node **stack)
+void	rra(t_node **stack)
 {
-	t_node *prev;
-	t_node *last;
+	t_node	*prev;
+	t_node	*last;
 
 	if (*stack && (*stack)->next)
 	{
@@ -65,9 +65,9 @@ void rra(t_node **stack)
 	write(1, "rra\n", 4);
 }
 
-void pb(t_node **a, t_node **b)
+void	pb(t_node **a, t_node **b)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (*a)
 	{
@@ -79,9 +79,9 @@ void pb(t_node **a, t_node **b)
 	write(1, "pb\n", 3);
 }
 
-void pa(t_node **a, t_node **b)
+void	pa(t_node **a, t_node **b)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (*b)
 	{

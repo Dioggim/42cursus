@@ -6,15 +6,17 @@
 /*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:22:07 by dgimenez          #+#    #+#             */
-/*   Updated: 2025/02/24 18:44:34 by dgimenez         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:42:18 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long convert_digits(const char *str, int sign, int *error)
+static long	convert_digits(const char *str, int sign, int *error)
 {
-	long res = 0;
+	long	res;
+
+	res = 0;
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')
@@ -32,10 +34,11 @@ static long convert_digits(const char *str, int sign, int *error)
 	}
 	return (res);
 }
-int ft_atoi_push(const char *str, int *error)
+
+int	ft_atoi_push(const char *str, int *error)
 {
-	long res;
-	int sign;
+	long	res;
+	int		sign;
 
 	res = 0;
 	sign = 1;
@@ -55,10 +58,11 @@ int ft_atoi_push(const char *str, int *error)
 	res = convert_digits(str, sign, error);
 	return ((int)(res * sign));
 }
-int check_duplicates(t_node *stack)
+
+int	check_duplicates(t_node *stack)
 {
-	t_node *a;
-	t_node *b;
+	t_node	*a;
+	t_node	*b;
 
 	a = stack;
 	while (a)
@@ -74,7 +78,8 @@ int check_duplicates(t_node *stack)
 	}
 	return (0);
 }
-int is_sorted(t_node *stack)
+
+int	is_sorted(t_node *stack)
 {
 	while (stack && stack->next)
 	{
@@ -84,9 +89,11 @@ int is_sorted(t_node *stack)
 	}
 	return (1);
 }
-void free_stack(t_node **stack)
+
+void	free_stack(t_node **stack)
 {
-	t_node *tmp;
+	t_node	*tmp;
+
 	while (*stack)
 	{
 		tmp = (*stack)->next;
