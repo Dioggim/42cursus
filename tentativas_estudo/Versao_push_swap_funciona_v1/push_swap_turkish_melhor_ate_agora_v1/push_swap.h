@@ -6,7 +6,7 @@
 /*   By: dgimenez <dgimenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 22:14:54 by dgimenez          #+#    #+#             */
-/*   Updated: 2025/02/28 22:22:36 by dgimenez         ###   ########.fr       */
+/*   Updated: 2025/02/25 22:46:06 by dgimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ typedef struct s_pushswap
 */
 void    parse_args(t_pushswap *ps, int argc, char **argv);
 void    error_and_exit(void);
-void	fill_array(int *arr, t_node *stack);
-void	sort_array(int *arr, int size);
 
 /*
 ** Operações básicas
@@ -71,8 +69,6 @@ void    push_back(t_node **stack, t_node *new);
 int     stack_size(t_node *stack);
 long	ft_atol(const char *str);
 int		ft_isnumber(const char *str);
-int		find_min(t_node *stack);
-int		get_min_pos(t_node *stack, int min);
 
 /*
 ** Sorts
