@@ -1,5 +1,3 @@
-Aqui está a tradução do seu texto para o português, mantendo a estrutura original:
-
 ```html
 <div align="center">
 	<h1>🌌 fract-ol</h1>
