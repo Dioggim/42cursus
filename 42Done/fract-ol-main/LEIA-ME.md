@@ -1,4 +1,3 @@
-```html
 <div align="center">
 	<h1>🌌 fract-ol</h1>
 	<img src="assets/banner.webp">
